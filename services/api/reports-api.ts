@@ -1,3 +1,4 @@
+import { SERVER_API_KEY } from "@/app/config/envVariables"
 import * as api from "./api-client"
 import { IBaseResponse, IDBase } from "@/lib/interfaces/api/IBaseAPIResponse"
 import { IFullReportResponse, IReportsResponse } from "@/lib/interfaces/api/IReportItemAPIResponse"
@@ -15,7 +16,7 @@ export const reportsApi = {
   fetchPublicReportDetails: async (reportId: IDBase) => {
     return await api.get<IFullReportResponse>(`/report/get-public-report/${reportId}`, undefined, {
       headers: {
-        "x-api-key": "b59ff110-64b6-4999-9e05-36cd4b9d517f"
+        "x-api-key": SERVER_API_KEY
       }
     })
   },

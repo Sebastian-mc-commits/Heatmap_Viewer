@@ -1,3 +1,4 @@
+import { SERVER_URL } from "@/app/config/envVariables"
 import AppError from "@/lib/classes/AppError"
 
 // Base API client for making HTTP requests
@@ -15,7 +16,7 @@ interface ApiConfig {
 
 export const API_CONFIG: ApiConfig = {
   baseUrls: {
-    local: "http://127.0.0.1:5600",
+    local: SERVER_URL,
     development: "",
     staging: "",
     production: "",

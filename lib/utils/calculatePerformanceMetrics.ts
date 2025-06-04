@@ -15,19 +15,10 @@ const calculatePerformanceMetrics = (gridPoints: MergedGridPoints, reportItem: I
   let mediumRelevance = 0
   let lowRelevance = 0
 
-  if (reportItem?.grid_points && reportItem.grid_points.length > 0) {
-    const analysis = reportItem.grid_points[0]
-    analysis.
-    highRelevance = analysis.high_relevance || 0
-    mediumRelevance = analysis.medium_relevance || 0
-    lowRelevance = analysis.low_relevance || 0
-  } else {
-
-    const keywordPerf = calculateKeywordPerformance(gridPoints)
-    highRelevance = keywordPerf.filter((k) => k.performance === "high").length
-    mediumRelevance = keywordPerf.filter((k) => k.performance === "medium").length
-    lowRelevance = keywordPerf.filter((k) => k.performance === "low").length
-  }
+  const keywordPerf = calculateKeywordPerformance(gridPoints)
+  highRelevance = keywordPerf.filter((k) => k.performance === "high").length
+  mediumRelevance = keywordPerf.filter((k) => k.performance === "medium").length
+  lowRelevance = keywordPerf.filter((k) => k.performance === "low").length
 
   return {
     avgRank,

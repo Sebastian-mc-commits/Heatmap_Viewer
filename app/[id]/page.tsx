@@ -1,7 +1,7 @@
 "use client"
 
 import { useParams } from "next/navigation"
-import SEOHeatMap from "./components/SEOHeatMap"
+import SEOHeatMap from "../../components/pages/report/SEOHeatMap"
 import { IDBase } from "@/lib/interfaces/api/IBaseAPIResponse"
 import { GoogleMapsProvider } from "@/providers/google-maps-provider"
 
